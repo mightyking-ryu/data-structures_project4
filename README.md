@@ -106,7 +106,7 @@ common interfaces for a hash table.
   `QuadProbeHashTable::get_next_pos()`.
 
 * `void HashTable::enlarge_table()`: Our hash table requires that its
-  table size is doubled if its load factor is equal to or greater than
+  table size is doubled if its load factor is greater than
   0.5. You will need to implement such a dynamic grow feature in this
   `HashTable::enlarge_table()` function. You will also accordingly
   check the load factor after every `HashTable::put()` operation,
