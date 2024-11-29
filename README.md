@@ -10,12 +10,12 @@
 * Understand two open addressing mechanisms, linear probing and quadratic probing
 
 ### Table of contents
-1. [Hash Table](#HashTable)
-2. [Provided Classes](#Classes)
-3. [Basic operations](#BasicOperations)
-4. [Open addressing](#OpenAddressing)
-5. [Dynamically Enlarging Table](#EnlargingTable)
-6. [Submission and Grading](#Submission-and-Grading)
+1. [Hash Table](#hash-table)
+2. [Provided Classes](#provided-classes)
+3. [Basic operations](#basic-operations)
+4. [Open addressing](#open-addressing)
+5. [Dynamically Enlarging Table](#dynamically-enlarging-table)
+6. [Submission and Grading](#submission-and-grading)
 
 ## Hash Table
 
