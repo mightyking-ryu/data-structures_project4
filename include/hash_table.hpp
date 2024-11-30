@@ -113,6 +113,7 @@ int HashTable<K, V>::remove(const K &key) {
         if(this->table[next_pos].is_removed() == false) {
             if(this->table[next_pos].get_key() == key) {
                 this->table[next_pos].set_removed();
+                this->size--;
                 return i + 1;
             }
         }
