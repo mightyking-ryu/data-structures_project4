@@ -160,7 +160,7 @@ public:
 private:
     virtual unsigned long get_next_pos(unsigned long pos, unsigned long step) {
         // TODO
-        return 0;
+        return ((unsigned long) (pos + 0.5*step + 0.5*step*step)) % this->table_size;
     }
 };
 
