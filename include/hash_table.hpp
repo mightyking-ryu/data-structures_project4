@@ -87,6 +87,19 @@ int HashTable<K, V>::put(const K &key, const V &value) {
 template <typename K, typename V>
 int HashTable<K, V>::remove(const K &key) {
     // TODO        
+    unsigned int pos = this->get_pos(key);
+    unsigned int next_pos = pos;
+    int i = 0;
+    while(this->table[next_pos].is_empty() == false) {
+        if(this->table[next_pos].is_removed() == false) {
+            if(this->table[next_pos].get_key() == key) {
+                this->table[next_pos].set_removed();
+                return i + 1;
+            }
+        }
+        i++;
+        next_pos = this->get_next_pos(pos, i);
+    }
     return -1;
 }
 
