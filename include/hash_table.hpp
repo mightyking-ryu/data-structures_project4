@@ -62,6 +62,19 @@ unsigned long HashTable<K, V>::get_pos(const K key) {
 template <typename K, typename V>
 int HashTable<K, V>::get(const K &key, V &value) {
     // TODO
+    unsigned int pos = this->get_pos(key);
+    unsigned int next_pos = pos;
+    int i = 0;
+    while(this->table[next_pos].is_empty() == false) {
+        if(this->table[next_pos].is_removed() == false) {
+            if(this->table[next_pos].get_key() == key) {
+                value = this->table[next_pos].get_value();
+                return i + 1;
+            }
+        }
+        i++;
+        next_pos = this->get_next_pos(pos, i);
+    }
     return -1;
 }
 
