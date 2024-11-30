@@ -56,7 +56,7 @@ void HashTable<K, V>::enlarge_table() {
 template <typename K, typename V>
 unsigned long HashTable<K, V>::get_pos(const K key) {
     // TODO
-    return 0;
+    return this->hash_func->hash(key) % this->table_size;
 }
 
 template <typename K, typename V>
