@@ -51,6 +51,18 @@ HashTable<K, V>::~HashTable() {
 template <typename K, typename V>
 void HashTable<K, V>::enlarge_table() {
     // TODO
+    HashSlot<K, V> *old_table = this->table;
+    size_t old_table_size = this->table_size;
+
+    this->table_size = 2 * this->table_size;
+    this->table = new HashSlot<K, V>[this->table_size];
+    this->size = 0;
+
+    for(int i = 0; i < old_table_size; i++) {
+        if(old_table[i].is_empty() == false && old_table[i].is_removed() == false) {
+            this->put(old_table[i].get_key(), old_table[i].get_value());
+        }
+    }
 }
 
 template <typename K, typename V>
