@@ -63,6 +63,8 @@ void HashTable<K, V>::enlarge_table() {
             this->put(old_table[i].get_key(), old_table[i].get_value());
         }
     }
+
+    delete[] old_table;
 }
 
 template <typename K, typename V>
